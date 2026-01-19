@@ -1,16 +1,29 @@
-# my_portfolio_app
+# Thomas Code - Full Stack Portfolio App 🚀
 
-A new Flutter project.
+A cross-platform mobile application built with **Flutter** that serves as a dynamic portfolio. It connects to a custom **PHP & MySQL** backend to fetch real-time project data, demonstrating a complete Full Stack architecture.
 
-## Getting Started
+## 📱 Features
+* **Dynamic Content:** Projects are not hard-coded. They are fetched via a REST API from a MySQL database.
+* **Custom Backend:** Integrated with a bespoke PHP API instead of a headless CMS.
+* **Real-Time Sync:** Updates to the database reflect instantly on both the Mobile App and the companion Web Client.
+* **Payment Integration:** Showcases **Flutterwave** integration for the "Hive" web app project.
+* **UI/UX:** Custom Dark Mode design with cached network images.
 
-This project is a starting point for a Flutter application.
+## 🛠️ Tech Stack
+* **Frontend:** Flutter (Dart), Google Fonts, HTTP, URL Launcher
+* **Backend:** PHP (Native), MySQL
+* **Architecture:** REST API
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
+| Home Screen | Project Details |
+|:---:|:---:|
+| <img src="assets/screenshots/home.png" width="250" /> | <img src="assets/screenshots/details.png" width="250" /> |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 How to Run
+1.  Clone the repository.
+2.  Ensure your local PHP/MySQL server (XAMPP/WAMP) is running.
+3.  Update the `apiUrl` in `main.dart` to point to your local IP.
+4.  Run `flutter run`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+**Built by [Thomas Ozichukwu](https://www.linkedin.com/in/thomas-ozichukwu-40441b304)**
