@@ -27,13 +27,24 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  
+  # --- ADDED FOR APP ICON ---
+  flutter_launcher_icons: ^0.13.1
 
 # --- FLUTTER CONFIGURATION ---
 flutter:
   uses-material-design: true
 
   # 1. REGISTER YOUR ASSETS HERE
-  # Make sure you created a folder named 'assets' in your project root
-  # and put 'profile.png' inside it.
   assets:
     - assets/profile.png
+    # - assets/icon.png  <-- You can uncomment this if you want to use the icon inside the app too
+
+# --- APP ICON CONFIGURATION ---
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png" # Points to the image you want as the App Icon
+  min_sdk_android: 21
+  adaptive_icon_background: "#121212" # Matches your Dark Mode theme
+  adaptive_icon_foreground: "assets/icon.png"

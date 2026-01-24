@@ -309,7 +309,7 @@ class InsightDetailScreen extends StatelessWidget {
     );
   }
 
-  // --- DUPLICATE HELPERS (Or move to a utils file) ---
+  // --- DUPLICATE HELPERS (To ensure it works in this class too) ---
   IconData _getIconData(String name) {
     switch (name) {
       case 'storage':
