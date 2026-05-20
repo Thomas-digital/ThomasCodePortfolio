@@ -15,10 +15,15 @@ const AuthContext = createContext<AuthContextType>({} as AuthContextType)
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const unsub = onAuthStateChanged(auth, u => {
       setUser(u)
+      setLoading(false)
+    }, error => {
+      console.error('Auth error:', error)
       setLoading(false)
     })
     return unsub
@@ -32,9 +37,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await signOut(auth)
   }
 
+  // Render children immediately, don't wait for auth to fully load
+  // Auth state will be available via context once loaded
   return (
     <AuthContext.Provider value={{ user, loading, login, logout }}>
-      {children}
+      {mounted ? children : null}
     </AuthContext.Provider>
   )
 }

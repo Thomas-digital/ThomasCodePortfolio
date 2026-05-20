@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans, DM_Mono } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 import { AuthProvider } from '@/context/AuthContext'
 import AnimationProvider from '@/components/AnimationProvider'
@@ -26,13 +27,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable}`}>
-        <AuthProvider>
-          <AnimationProvider>
-            {children}
-          </AnimationProvider>
-        </AuthProvider>
+        <Suspense fallback={null}>
+          <AuthProvider>
+            <AnimationProvider>
+              {children}
+            </AnimationProvider>
+          </AuthProvider>
+        </Suspense>
       </body>
     </html>
   )

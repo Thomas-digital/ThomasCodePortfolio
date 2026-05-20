@@ -1,24 +1,12 @@
 {
   "firestore": {
     "database": "(default)",
-    "location": "nam5",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "apphosting": [
     {
-      "backendId": "thomas-code-portfolio",
-      "rootDir": "/",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "functions"
-      ]
-    },
-    {
-      "backendId": "thomas-code-portfolio",
+      "backendId": "portfolio-backend",
       "rootDir": "/",
       "ignore": [
         "node_modules",
