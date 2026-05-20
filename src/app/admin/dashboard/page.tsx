@@ -9,6 +9,7 @@ import AdminSkills from '@/components/admin/AdminSkills'
 import AdminExperience from '@/components/admin/AdminExperience'
 import AdminProjects from '@/components/admin/AdminProjects'
 import AdminEducation from '@/components/admin/AdminEducation'
+import AdminContact from '@/components/admin/AdminContact'
 
 export default function Dashboard() {
   const { user, loading } = useAuth()
@@ -35,7 +36,7 @@ export default function Dashboard() {
     experience: <AdminExperience />,
     projects: <AdminProjects />,
     education: <AdminEducation />,
-    contact: <div style={{ color: 'var(--text-dim)', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>Contact editor coming soon.</div>,
+    contact: <AdminContact />,
   }
 
   return (
